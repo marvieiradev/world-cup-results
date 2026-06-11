@@ -33,13 +33,15 @@ export function GroupPhase({ matches, dates }) {
                                         Grupo {group}
                                     </h2>
 
-                                    {matchesByGroup[group].map((match) => (
-                                        <div key={match.idEvent} className="w-full mb-4">
-                                            <MatchCard
-                                                match={match}
-                                            />
-                                        </div>
-                                    ))}
+                                    <div className="grid gap-x-3 sm:grid-cols-2">
+                                        {matchesByGroup[group].map((match) => (
+                                            <div key={match.idEvent} className="w-full mb-3">
+                                                <MatchCard
+                                                    match={match}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             ))
                     }
@@ -50,13 +52,16 @@ export function GroupPhase({ matches, dates }) {
                         dates.map((date) => (
                             <div key={date}>
                                 <h2 className="text-base md:text-2xl font-semibold mb-4 mt-6 text-white text-center bg-black rounded-lg py-1 px-2">{new Date(date).toLocaleString("pt-BR", { dateStyle: "medium", timeZone: "UTC", })}</h2>
-                                {matches
-                                    .filter((match) => match.strTimestamp.startsWith(date))
-                                    .map((match) => (
-                                        <div key={match.idEvent} className="w-full mb-4">
-                                            <MatchCard match={match} />
-                                        </div>
-                                    ))}
+
+                                <div className="grid gap-x-3 sm:grid-cols-2">
+                                    {matches
+                                        .filter((match) => match.strTimestamp.startsWith(date))
+                                        .map((match) => (
+                                            <div key={match.idEvent} className="w-full mb-3">
+                                                <MatchCard match={match} />
+                                            </div>
+                                        ))}
+                                </div>
                             </div>
                         ))
                     }
