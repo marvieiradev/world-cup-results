@@ -29,7 +29,7 @@ export function GroupPhase({ matches, dates }) {
                             .sort()
                             .map((group) => (
                                 <div key={group}>
-                                    <h2 className="text-lg md:text-2xl font-semibold mb-4 mt-6 text-white text-center bg-black rounded-lg p-2">
+                                    <h2 className="text-base md:text-2xl font-semibold mb-4 mt-6 text-white text-center bg-black rounded-lg py-1 px-2">
                                         Grupo {group}
                                     </h2>
 
@@ -49,7 +49,7 @@ export function GroupPhase({ matches, dates }) {
                     {
                         dates.map((date) => (
                             <div key={date}>
-                                <h2 className="text-lg md:text-2xl font-semibold mb-4 mt-6 text-white text-center bg-black rounded-lg p-2">{new Date(date).toLocaleString("pt-BR", { dateStyle: "medium", timeZone: "UTC", })}</h2>
+                                <h2 className="text-base md:text-2xl font-semibold mb-4 mt-6 text-white text-center bg-black rounded-lg py-1 px-2">{new Date(date).toLocaleString("pt-BR", { dateStyle: "medium", timeZone: "UTC", })}</h2>
                                 {matches
                                     .filter((match) => match.strTimestamp.startsWith(date))
                                     .map((match) => (

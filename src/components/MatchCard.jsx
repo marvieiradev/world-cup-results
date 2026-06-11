@@ -1,4 +1,5 @@
 import TeamCard from "./TeamCard";
+import { FaLocationDot } from "react-icons/fa6";
 
 
 const MatchCard = ({ match }) => {
@@ -19,7 +20,10 @@ const MatchCard = ({ match }) => {
                     <TeamCard teamName={match.AwayTeam} teamScore={match.AwayScore} teamFlag={match.AwayTeam} typeTeam="away" />
                 </div>
             </div>
-            <span className="text-sm  md:text-base text-gray-800 font-bold mt-2 mb-2">{match.Location}</span>
+            <div className="flex items-center gap-2  mt-2 mb-2">
+                <FaLocationDot />
+                <span className="text-sm  md:text-base text-gray-800 font-bold">{match.Location}</span>
+            </div>
         </div>
     );
 }
