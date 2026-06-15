@@ -1,8 +1,33 @@
 import TeamCard from "./TeamCard";
 import { FaLocationDot } from "react-icons/fa6";
+//import { useEffect, useState } from "react";
 
 
 const MatchCard = ({ match }) => {
+
+
+
+    //const searchResults =
+    // "https://www.thesportsdb.com/api/v1/json/123/lookupevent.php?id=" + match.idEvent;
+
+    /*const [matchResults, setMatchResults] = useState(null);
+
+    useEffect(() => {
+        const getResults = async () => {
+            const response = await fetch(
+                `https://www.thesportsdb.com/api/v1/json/123/lookupevent.php?id=${match.idEvent}`
+            );
+
+            const json = await response.json();
+
+            console.log(json);
+
+            setMatchResults(json.events?.[0] ?? null);
+        };
+
+        getResults();
+    }, [match.idEvent]);*/
+
     return (
         <div className="flex flex-col gap-2 items-center justify-center bg-white rounded-t-lg rounded-br-lg w-full">
             <div className="flex w-full justify-evenly bg-black rounded-t-lg text-white p-2 items-center">
